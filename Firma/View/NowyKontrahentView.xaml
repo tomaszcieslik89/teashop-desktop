@@ -1,0 +1,151 @@
+﻿<local:JedenViewBase x:Class="Firma.View.NowyKontrahentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:adorners="http://gu.se/Adorners"
+        xmlns:local="clr-namespace:Firma.View"
+        mc:Ignorable="d"
+        d:DesignHeight="800" d:DesignWidth="2000">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Dane kontrahenta" Grid.Row="0" Style="{StaticResource WzorGroupBox}">
+                <StackPanel>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="500"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Imię" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" adorners:Watermark.Text="Imię" Style="{StaticResource WzorTextBox}" Text="{Binding Path=ImieDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="0" Grid.Column="3" Content="Nazwisko" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="4" adorners:Watermark.Text="Nazwisko" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NazwiskoDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Kod" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" adorners:Watermark.Text="Kod kontrahenta" Style="{StaticResource WzorTextBox}" Text="{Binding Path=KodDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="1" Grid.Column="3" Content="Nazwa firmy" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="4" adorners:Watermark.Text="Nazwa firmy kontrahenta" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NazwaDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <!---->
+                        <Label Grid.Row="2" Grid.Column="0" Content="Miejscowość" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" adorners:Watermark.Text="Miejscowość" Style="{StaticResource WzorTextBox}" Text="{Binding Path=MiejscowoscDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="2" Grid.Column="3" Content="Kod pocztowy" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="4" adorners:Watermark.Text="Kod pocztowy" Style="{StaticResource WzorTextBox}" Text="{Binding Path=KodPocztowyDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="240"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="240"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Ul." Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" adorners:Watermark.Text="Ulica" Style="{StaticResource WzorTextBox}" Text="{Binding Path=UlicaDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="0" Grid.Column="3" Content="nr" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="4" adorners:Watermark.Text="nr domu" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NrDomuDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="0" Grid.Column="5" Content="/" Style="{StaticResource WzorLabelCenter}"/>
+                        <TextBox Grid.Row="0" Grid.Column="6" adorners:Watermark.Text="nr lolaku" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NrLokaluDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="500"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Województwo" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" adorners:Watermark.Text="Województwo" Style="{StaticResource WzorTextBox}" Text="{Binding Path=Wojewodztwo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+                        <Label Grid.Row="0" Grid.Column="3"  Content="Kraj" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="4" adorners:Watermark.Text="Kraj" Style="{StaticResource WzorTextBox}" Text="{Binding Path=Kraj, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <!---->
+                        <Label Grid.Row="1" Grid.Column="0" Content="NIP" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" adorners:Watermark.Text="NIP kontrahenta" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NIPDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="1" Grid.Column="3"  Content="REGON" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="4" adorners:Watermark.Text="REGON" Style="{StaticResource WzorTextBox}" Text="{Binding Path=REGONDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <!---->
+                        <Label Grid.Row="2" Grid.Column="0" Content="Telefon" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" adorners:Watermark.Text="Telefon kontrahenta" Style="{StaticResource WzorTextBox}" Text="{Binding Path=TelefonDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="2" Grid.Column="3"  Content="E-mail" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="4" adorners:Watermark.Text="E-mail kontrahenta" Style="{StaticResource WzorTextBox}" Text="{Binding Path=EmailDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <!---->
+                        <Label Grid.Row="3" Grid.Column="0"  Content="Płeć" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" adorners:Watermark.Text="Płeć" Style="{StaticResource WzorTextBox}" Text="{Binding Path=Plec, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+                        <Label Grid.Row="4" Grid.Column="0"  Content="Dodatkowe" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" adorners:Watermark.Text="Dodatkowy opis znajdujący się na dokumencie" Style="{StaticResource WzorTextBox}" Grid.ColumnSpan="4" Height="50" TextWrapping="Wrap" Text="{Binding Path=UwagiDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Płatności kontrahenta" Grid.Row="1" Style="{StaticResource WzorGroupBox}">
+                <StackPanel>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="500"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Forma płatności" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" adorners:Watermark.Text="Karta,gotówka etc" Style="{StaticResource WzorTextBox}" Text="{Binding Path=FormaPlatnosciDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Przypisany rabat ( % )" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" adorners:Watermark.Text="Rabat procentowy" Style="{StaticResource WzorTextBox}" Text="{Binding Path=RabatDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Nazwa banku" Style="{StaticResource WzorLabel}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" adorners:Watermark.Text="Nazwa banku" Style="{StaticResource WzorTextBox}" Grid.ColumnSpan="2" Text="{Binding Path=BankDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        <Label Grid.Row="2" Grid.Column="3" Content="Nr konta" Style="{StaticResource WzorLabel}"/>
+                        <TextBox Grid.Row="2" Grid.Column="4" adorners:Watermark.Text="Nr konta bankowego" Style="{StaticResource WzorTextBox}" Text="{Binding Path=RachunekNrDane, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+    </UserControl>
+</local:JedenViewBase>

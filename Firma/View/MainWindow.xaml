@@ -1,0 +1,159 @@
+﻿<Window x:Class="Firma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Firma"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="TeaShop - Tomasz Cieślik" Height="900" Width="1900"
+        WindowState="Maximized">
+    <Window.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </Window.Resources>
+    <Grid
+        Background="#FF293746">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Column="0" Grid.Row="0" BorderBrush="#FFD7DEE6" BorderThickness="2" Foreground="Black">
+            <MenuItem Header="_Sprzedaż">
+                <MenuItem Header="Paragon" Command="{Binding ShowNowyParagonCommand}"/>
+                <MenuItem Header="Faktura" Command="{Binding ShowNowaFakturaCommand}"/>
+                <MenuItem Header="Proforma" Command="{Binding ShowNowaProFormaCommand}"/>
+                <MenuItem Header="Lista dokumentów" Command="{Binding ShowListaDokumentowCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Magazyn" >
+                <MenuItem Header="Dodaj towar" Command="{Binding ShowNowyTowarCommand}"/>
+                <MenuItem Header="Lista towarów" Command="{Binding ShowListaTowarowCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Raporty">
+                <MenuItem Header="Raport magazynu i sprzedaży" Command="{Binding ShowRaportSprzedazyCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Kontrahenci">
+                <MenuItem Header="Nowy kontrahent" Command="{Binding ShowNowaKontrahentCommand}" />
+                <MenuItem Header="Lista kontrahentów" Command="{Binding ShowListaKontrahentowCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Reklamacje">
+                <MenuItem Header="Dodaj reklamacje" Command="{Binding ShowDodajReklamacjeCommand}"/>
+                <MenuItem Header="Etap reklamacji" Command="{Binding ShowEtapReklamacjiCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Pracownicy">
+                <MenuItem Header="Dodaj pracownika" Command="{Binding ShowDodajPracownikaCommand}"/>
+                <MenuItem Header="Lista pracowników" Command="{Binding ShowListaPracownikowCommand}"/>
+                <MenuItem Header="Lista urlopów" Command="{Binding ShowUrlopyCommand}"/>
+                <MenuItem Header="Zaplanuj urlop" Command="{Binding ShowZaplanujUrlopCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Ustawienia">
+                <MenuItem Header="Lista użytkowników" Command="{Binding ShowUzytkownicyCommand}"/>
+                <MenuItem Header="Koniec pracy" Command="{Binding ShowKoniecPracyCommand}" InputGestureText="Alt+F4"/>
+            </MenuItem>
+            <MenuItem Header="Pr_ogram">
+                <MenuItem Header="O programie" Command="{Binding ShowOProgramieCommand}"/>
+                <MenuItem Header="Aktualizacje" Command="{Binding ShowAktualizacjaCommand}"/>
+                <!--Wprowadz klucz-->
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Column="0" Grid.Row="1" Background="#FFD7DEE6">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="#FF293746">
+                <HeaderedContentControl 
+                    Background="#FF293746"
+                    ContentTemplate="{StaticResource CommandsTemplate}"/>
+            </Border>
+            <Border Grid.Column="1">
+                <HeaderedContentControl  
+                    Content="{Binding Path=Workspaces}"
+                    ContentTemplate="{StaticResource WorkspacesTemplate}"
+                    />
+            </Border>
+            <StackPanel>
+            <!--LOGO-->
+                <Button Style="{StaticResource WzorButtonLogo}">
+                    <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/logoLisc.png"/>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}">
+                                <!-- Usuń podświetlenie (Trigger) -->
+                                <StackPanel>
+                                    <Image RenderOptions.BitmapScalingMode="HighQuality" Width="150" Height="150" Source="/Content/logoLisc.png"/>
+                                    <TextBlock Text="TeaShop" Style="{StaticResource WzorTextBlockLogo}"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <!--#1-->
+                <Button Style="{StaticResource Proba2}" 
+                        Command="{Binding ShowNowyParagonCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/Paragon.png"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Paragon"/>
+                    </StackPanel>
+                </Button>
+                <!--#2 "Menager zamówień -->
+                <Button Style="{StaticResource Proba2}"
+                        Command="{Binding ShowNowaFakturaCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/Faktura.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Faktura"/>
+                    </StackPanel>
+                </Button>
+                <!--#3-->
+                <Button Style="{StaticResource Proba2}"
+                        Command="{Binding ShowListaTowarowCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image  RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/towar.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Lista towarów"/>
+                    </StackPanel>
+                </Button>
+                <!--#4-->
+                <Button Style="{StaticResource Proba2}" 
+                        Command="{Binding ShowListaKontrahentowCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/teczka.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Lista kontrahentów"/>
+                    </StackPanel>
+                </Button>
+                <!--#5-->
+                <Button Style="{StaticResource Proba2}" 
+                        Command="{Binding ShowListaDokumentowCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/ListaDokumentow.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Lista dokumentów" />
+                    </StackPanel>
+                </Button>
+                <!--#6-->
+                <Button Style="{StaticResource Proba2}" 
+                        Command="{Binding ShowUzytkownicyCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/ChangeUser.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}"
+                         Text="Lista użytkowników" />
+                    </StackPanel>
+                </Button>
+                <!--#7-->
+                <Button Style="{StaticResource Proba2}" 
+                        Command="{Binding ShowKoniecPracyCommand}">
+                    <StackPanel Style="{StaticResource StackPanelLewo}">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Content/Exit.png" Style="{StaticResource WzorImage}"/>
+                        <TextBlock Style="{StaticResource TextBlockPanel}" 
+                         Text="Koniec pracy" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,58 @@
+﻿<local:WszystkieViewBase  x:Class="Firma.View.EtapReklamacjiView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Firma.View"
+             xmlns:adorners="http://gu.se/Adorners"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid Grid.Row="3">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranyEtapReklamacji, Mode=TwoWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding IdReklamacji}"/>
+                        <DataGridTextColumn Header="Imię" Binding="{Binding ImieR}"/>
+                        <DataGridTextColumn Header="Nazwisko" Binding="{Binding NazwiskoR}"/>
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding TelefonR}"/>
+                        <DataGridTextColumn Header="E-mail" Binding="{Binding EmailR}"/>
+                        <DataGridTextColumn Header="Miejscowość" Binding="{Binding MiejscowoscR}"/>
+                        <DataGridTextColumn Header="Kod pocztowy" Binding="{Binding KodPocztowyR}"/>
+                        <DataGridTextColumn Header="Ulica" Binding="{Binding UlicaR}"/>
+                        <DataGridTextColumn Header="Nr lokalu" Binding="{Binding NrLokaluR}"/>
+                        <DataGridTextColumn Header="Nr domu" Binding="{Binding NrDomuR}"/>
+                        <DataGridTextColumn Header="Produkt" Binding="{Binding TowaryR}"/>
+                        <DataGridTextColumn Header="Opis" Binding="{Binding OpisR}"/>
+                        <DataGridTextColumn Header="Jednostka" Binding="{Binding JednostkaR}"/>
+                        <DataGridTextColumn Header="Ilość" Binding="{Binding IloscR}"/>
+                        <DataGridTextColumn Header="PESEL" Binding="{Binding PESELR}"/>
+                        <DataGridTextColumn Header="Dokument" Binding="{Binding DokumentR}"/>
+                        <DataGridTextColumn Header="Data zakupu" Binding="{Binding DostawcaR}"/>
+                        <DataGridTextColumn Header="Dostawca" Binding="{Binding DostawcaR}"/>
+                        <DataGridTextColumn Header="Data zakupu" Binding="{Binding DataZakupu}"/>
+                        <DataGridTextColumn Header="Gwarancja do" Binding="{Binding DataPowstaniaWady}"/>
+                        <DataGridTextColumn Header="Data powstania wady" Binding="{Binding DataGwarancjiDo}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </UserControl>
+</local:WszystkieViewBase>        

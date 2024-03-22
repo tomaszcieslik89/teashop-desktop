@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="506f6603dfaa46148eea096bad6bf3d7" Name="Diagram1">
+        <EntityTypeShape EntityType="TeaShopModel.C__EFMigrationsHistory" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Adres" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Bank" Width="1.5" PointX="3.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.CMSAktualnosc" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.CMSParametr" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.CMSStrona" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.DaneLogowania" Width="1.5" PointX="3.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.DanePersonalne" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Dodatkowe" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.DokumentSprzedazy" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.DokumentSprzedazyTowar" Width="1.5" PointX="11.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.KategoriaTowaru" Width="1.5" PointX="3.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Kontrahent" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.KoszykTemp" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Kraj" Width="1.5" PointX="1.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Marka" Width="1.5" PointX="3.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlanUrlopu" Width="1.5" PointX="11.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscBlikiem" Width="1.5" PointX="1.5" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscDoDostawcy" Width="1.5" PointX="1.5" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscGotowka" Width="1.5" PointX="1.5" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Platnosci" Width="1.5" PointX="3.75" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscKarta" Width="1.5" PointX="1.5" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscOdKontrahenta" Width="1.5" PointX="1.5" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.PlatnoscPrzelewem" Width="1.5" PointX="1.5" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Plec" Width="1.5" PointX="3.75" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Pracownik" Width="1.5" PointX="9" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Producent" Width="1.5" PointX="6.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Rabat" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Reklamacje" Width="1.5" PointX="14.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.RodzajDokumentu" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.RodzajUmowy" Width="1.5" PointX="4.5" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.RodzajWolnego" Width="1.5" PointX="4.5" PointY="49.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.RodzajZatrudnienia" Width="1.5" PointX="4.5" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SklepElementKoszyka" Width="1.5" PointX="11" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SklepRodzaj" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SklepTowar" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowanieDokumentow" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowaniePracownikow" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowanieReklamacji" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowanieTowaru" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowanieUrlopow" Width="1.5" PointX="13.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SortowanieUzytkownikow" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SposobPlatnosci" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.StanowiskoPracownika" Width="1.5" PointX="6.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Status" Width="1.5" PointX="12" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.sysdiagrams" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.SzczegolyTowaru" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Towar" Width="1.5" PointX="9" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.TypKontrahenta" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Urlop" Width="1.5" PointX="6.75" PointY="46.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Uzytkownik" Width="1.5" PointX="6" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.VAT" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Wojewodzctwo" Width="1.5" PointX="1.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Wynagrodzenie" Width="1.5" PointX="14.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.ZadanieReklamujacego" Width="1.5" PointX="12" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.ZakresWyszukiwaniaDaty" Width="1.5" PointX="15.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.ZakupTowaru" Width="1.5" PointX="11.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeaShopModel.Zatrudnienie" Width="1.5" PointX="6.75" PointY="55.25" IsExpanded="true" />
+        <AssociationConnector Association="TeaShopModel.FK_Adres_Kraj" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Adres_Wojewodzctwo" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_TypKontrahenta_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscPrzelewem_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Uzytkownik_DaneLogowania" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_DanePersonalne" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_DanePersonalne" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_DanePersonalne" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_TypKontrahenta_DanePersonalne" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Uzytkownik_DanePersonalne" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_SzczegolyTowaru_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_TypKontrahenta_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_Dodatkowe" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_Platnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_Rabat" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_RodzajDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazy_SposobPlatnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazyTowar_DokumentSprzedazy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_DokumentSprzedazy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_DokumentSprzedazy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_DokumentSprzedazyTowar_Towar1" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_SzczegolyTowaru_KategoriaTowaru" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_KategoriaTowaru" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Platnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Plec" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_Rabat" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_RodzajDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Kontrahent_TypKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_Kontrahent" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_SzczegolyTowaru_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlanUrlopu_Pracownik" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlanUrlopu_RodzajWolnego" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlanUrlopu_Urlop" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscBlikiem_PlatnoscDoDostawcy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscBlikiem_PlatnoscOdKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscBlikiem" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscGotowka_PlatnoscDoDostawcy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscDoDostawcy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscKarta_PlatnoscDoDostawcy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscPrzelewem_PlatnoscDoDostawcy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscGotowka_PlatnoscOdKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscGotowka" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscKarta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscOdKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Platnosci_PlatnoscPrzelewem" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_Platnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscKarta_PlatnoscOdKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_PlatnoscPrzelewem_PlatnoscOdKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Plec" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_StanowiskoPracownika" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Urlop" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Pracownik_Zatrudnienie" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Wynagrodzenie_Pracownik" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_Producent" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_Rabat" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Reklamacje_ZadanieReklamujacego" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_RodzajDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_TypKontrahenta_RodzajDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_RodzajDokumentu" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Wynagrodzenie_RodzajUmowy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Zatrudnienie_RodzajUmowy" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Urlop_RodzajWolnego" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Wynagrodzenie_RodzajZatrudnienia" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Zatrudnienie_RodzajZatrudnienia" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_SklepElementKoszyka_SklepTowar_SklepTowarIdTowaru" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_SposobPlatnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Uzytkownik_StanowiskoPracownika" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Wynagrodzenie_StanowiskoPracownika" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Zatrudnienie_StanowiskoPracownika" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_SzczegolyTowaru" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Towar_TypKontrahenta" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_ZakupTowaru_Towar" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Zatrudnienie_Urlop" ManuallyRouted="false" />
+        <AssociationConnector Association="TeaShopModel.FK_Wynagrodzenie_Zatrudnienie" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

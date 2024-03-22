@@ -1,0 +1,551 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vw="clr-namespace:Firma.View"
+                    xmlns:vm="clr-namespace:Firma.ViewModel">
+    <DataTemplate DataType="{x:Type vm:NowyTowarViewModel}">
+        <vw:NowyTowarView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaFakturaViewModel}">
+        <vw:NowaFakturaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:OProgramieViewModel}">
+        <vw:OProgramieView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyParagonViewModel}">
+        <vw:NowyParagonView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaFakturaProFormaViewModel}">
+        <vw:NowaFakturaProFormaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyKontrahentViewModel}">
+        <vw:NowyKontrahentView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportSprzedazyViewModel}">
+        <vw:RaportSprzedazyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ListaTowarowViewModel}">
+        <vw:ListaTowarowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:UzytkownicyViewModel}">
+        <vw:UzytkownicyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KoniecPracyViewModel}">
+        <vw:KoniecPracyView/>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type vm:ListaKontrahentowViewModel}">
+        <vw:ListaKontrahentowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:DodajReklamacjeViewModel}">
+        <vw:DodajReklamacjeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:DodajPracownikaViewModel}">
+        <vw:DodajPracownikaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ListaPracownikowViewModel}">
+        <vw:ListaPracownikowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ZaplanujUrlopViewModel}">
+        <vw:ZaplanujUrlopView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:UrlopyViewModel}">
+        <vw:UrlopyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ListaDokumentowViewModel}">
+        <vw:ListaDokumentowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AktualizacjaViewModel}">
+        <vw:AktualizacjaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EtapReklamacjiViewModel}">
+        <vw:EtapReklamacjiView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:LogowanieViewModel}">
+        <vw:LogowanieView/>
+    </DataTemplate>
+    <!--Logowanie-->
+    <Style x:Key="WzorLabelPogrubionyLewo" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="25.96"/>
+        <Setter Property="Margin" Value="0,1,0,6"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="WzorButtonCenter" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="WzorPasswordBox" TargetType="{x:Type PasswordBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="21"/>
+    </Style>
+
+    <Style x:Key="WzorTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="21"/>
+    </Style>
+
+    <Style x:Key="WzorTextBoxSzerokiWrapping" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="440"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="WzorTextBoxSzaryPrawo" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="WzorTextBoxSzaryLewo" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="WzorTextBoxBialyLewo" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,5,0,10"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
+    <!-- zrobic dziedziczenia-->
+    <Style x:Key="WzorLabelSrodekOdstep300" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Margin" Value="0,45,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="WzorLabel" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="25.96"/>
+        <Setter Property="Margin" Value="0,1,0,6"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="WzorLabelCenter" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="25.96"/>
+        <Setter Property="Margin" Value="0,1,0,6"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="WzorLabelTabelka" TargetType="{x:Type Label}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="WzorLabelPogrubiony" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="25.96"/>
+        <Setter Property="Margin" Value="0,1,0,6"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="WzorDatePicker" TargetType="{x:Type DatePicker}">
+        <Setter Property="Margin" Value="0,5,0,5"/>
+    </Style>
+
+    <Style x:Key="WzorCheckBox" TargetType="{x:Type CheckBox}">
+        <Setter Property="Margin" Value="10,10,0,0"/>
+        <Setter Property="Height" Value="25.96"/>
+    </Style>
+
+    <Style x:Key="WzorCheckBoxLista" TargetType="{x:Type CheckBox}">
+        <Setter Property="Margin" Value="10,12,0,-2"/>
+        <Setter Property="Height" Value="25.96"/>
+    </Style>
+
+    <Style x:Key="WzorCheckBoxStandard" TargetType="{x:Type CheckBox}">
+        <Setter Property="Margin" Value="10,5,-10,2"/>
+        <Setter Property="Height" Value="25.96"/>
+    </Style>
+
+    <Style x:Key="WzorStackPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="Margin" Value="80,10,10,10"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style x:Key="WzorStackPanelMargin" TargetType="{x:Type StackPanel}">
+        <Setter Property="Margin" Value="80,10,10,10"/>
+    </Style>
+
+    <Style x:Key="WzorComboBox" TargetType="{x:Type ComboBox}">
+        <!--przykład nowy kontrahent-->
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="Height" Value="22"/>
+    </Style>
+    <Style x:Key="WzorComboBoxNettoBrutto" TargetType="{x:Type ComboBox}">
+        <!--przykład nowy kontrahent-->
+        <Setter Property="Margin" Value="0,4,-49,8"/>
+        <Setter Property="Height" Value="22"/>
+    </Style>
+
+    <Style x:Key="WzorComboBoxSzeroki" TargetType="{x:Type ComboBox}">
+        <!--przykład nowy kontrahent-->
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Width" Value="150"/>
+    </Style>
+
+    <Style x:Key="WzorGroupBox" TargetType="{x:Type GroupBox}">
+        <Setter Property="Margin" Value="0,0,600,0"/>
+    </Style>
+
+    <Style x:Key="WzorButtonDystans" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="7,5,0,5"/>
+        <!--<Setter Property="Background" Value="#FF5FCC24"/>-->
+    </Style>
+    
+    <Style x:Key="WzorButtonColumnSpan2" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10,0,177,10"/>
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+    </Style>
+
+    <Style x:Key="WzorButtonRownyZCombobox" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10,2,97,8"/>
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+    </Style>
+
+    <Style x:Key="WzorButtonLogo" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#FF293746"/>
+        <Setter Property="BorderBrush" Value="#FF293746"/>
+        <Setter Property="Width" Value="220"/>
+        <Setter Property="Height" Value="220"/>
+        <Setter Property="Margin" Value="0,20,0,10"/>
+    </Style>
+    <Style x:Key="WzorButtonStandard" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10,3,0,8"/>
+
+    </Style>
+
+    <Style x:Key="WzorButtonStandardLista" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10,1,-3,10"/>
+    </Style>
+
+    <Style x:Key="WzorGrid" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="#FFD7DEE6"/>
+    </Style>
+
+    <Style x:Key="WzorTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="WzorTextBlockLogo" TargetType="{x:Type TextBlock}">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="FontFamily" Value="Lato"/>
+        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="WzorTextBlockSrodek" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="17"/>
+    </Style>
+
+    <Style x:Key="WzorButtonSrodek" TargetType="{x:Type Button}">
+        <!--O programie-->
+        <Setter Property="Margin" Value="200,50,200,0"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="25"/>
+    </Style>
+
+    <Style x:Key="WzorUserControl" TargetType="{x:Type UserControl}">
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    <!--Button-->
+    <Style x:Key="ButtonStandardowy" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6"/>
+    </Style>
+    <Style x:Key="ButtonStandardowy2" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <!--ColumnDefinition-->
+    <Style x:Key="ColumnSeparacyjnaStandardowa" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="5"/>
+    </Style>
+    <Style x:Key="ColumnSeparacyjnaDuza20" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="30"/>
+    </Style>
+    <Style x:Key="ColumnAuto" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="Auto"/>
+    </Style>
+    <Style x:Key="ColumnStandardowa" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="100"/>
+    </Style>
+    <Style x:Key="ColumnDuza" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="200"/>
+    </Style>
+
+    <!--RowDefinision-->
+    <Style x:Key="RowDefinitionStandardowy" TargetType="{x:Type RowDefinition}">
+        <Setter Property="Height" Value="35"/>
+    </Style>
+    <Style x:Key="RowDefinitionAuto" TargetType="{x:Type RowDefinition}">
+        <Setter Property="Height" Value="auto"/>
+    </Style>
+
+    <!--ComboBox-->
+    <Style x:Key="ComboBoxStandardowy" TargetType="{x:Type ComboBox}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="2,6"/>
+    </Style>
+    <Style x:Key="ComboBoxStandardowy2" TargetType="{x:Type ComboBox}">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <!--CheckBox-->
+    <Style x:Key="CheckBoxTak" TargetType="{x:Type CheckBox}">
+        <Setter Property="Content" Value="Tak"/>
+        <Setter Property="Margin" Value="2,6"/>
+    </Style>
+    <Style x:Key="CheckBoxNie" TargetType="{x:Type CheckBox}">
+        <Setter Property="Content" Value="Nie"/>
+        <Setter Property="Margin" Value="2,6"/>
+    </Style>
+    <Style x:Key="CheckBoxStandardowy" TargetType="{x:Type CheckBox}">
+        <Setter Property="Content" Value="Nie"/>
+        <Setter Property="Margin" Value="2,6"/>
+    </Style>
+
+    <!--Label-->
+    <Style x:Key="LabelStandardowy" TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="25"/>
+    </Style>
+    <Style x:Key="LabelStandardowy2" TargetType="{x:Type Label}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="LabelAuto" TargetType="{x:Type Label}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <!--TextBlock panel po lewej-->
+    <Style x:Key="TextBlockPanel" TargetType="{x:Type TextBlock}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+    </Style>
+
+    <Style x:Key="WzorImage" TargetType="{x:Type Image}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+    </Style>
+
+    <!--TextBox-->
+    <Style x:Key="TextBoxStandardowy" TargetType="{x:Type TextBox}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="TextBoxStandardowy2" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="TextBoxNieaktywny" BasedOn="{StaticResource TextBoxStandardowy2}" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="IsEnabled" Value="False"/>
+    </Style>
+
+    <!--ListBox-->
+    <Style x:Key="ListBoxStandardowy" TargetType="{x:Type ListBox}">
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Margin" Value="2,6"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+    </Style>
+    <!--ListBox-->
+    <Style x:Key="ListBoxStandardowy2" TargetType="{x:Type ListBox}">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+    <Style x:Key="ListBoxSzeroki" BasedOn="{StaticResource ListBoxStandardowy}" TargetType ="{x:Type ListBox}">
+        <Setter Property="Width" Value="150"/>
+    </Style>
+    <Style x:Key="ListBoxSuperSzeroki" BasedOn="{StaticResource ListBoxStandardowy}" TargetType ="{x:Type ListBox}">
+        <Setter Property="Width" Value="420"/>
+    </Style>
+    <!--Expander-->
+    <Style x:Key="ExpanderRozwiniety" TargetType="{x:Type Expander}">
+        <Setter Property="IsExpanded" Value="True"/>
+        <Setter Property="Background" Value="Azure"/>
+    </Style>
+
+    <!--StackPanel-->
+    <Style x:Key="StackPanelStandardowy" TargetType="{x:Type StackPanel}">
+        <Setter Property="Background" Value="Azure"/>
+        <Setter Property="Margin" Value="4"/>
+    </Style>
+
+    <!--DatePicker-->
+    <Style x:Key="DatePickerStandardowy" TargetType="{x:Type DatePicker}">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Margin" Value="2,6"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="DatePickerSzeroki" BasedOn="{StaticResource DatePickerStandardowy}" TargetType="{x:Type DatePicker}">
+        <Setter Property="Width" Value="300"/>
+    </Style>
+
+    <!--DataGrid-->
+    <Style x:Key="DataGridStandardowy" TargetType="{x:Type DataGrid}">
+
+    </Style>
+
+    <!--style okna główne               NIEUŻYWANE ????-->
+    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="HeaderTemplate">
+
+            <Setter.Value>
+                <DataTemplate>
+                    <Border 
+            Background="#FF439CD7" 
+            BorderBrush="LightGray" 
+            BorderThickness="1" 
+            CornerRadius="5" 
+            Margin="4" 
+            Padding="4" 
+            SnapsToDevicePixels="True" 
+            >
+                        <TextBlock 
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White" 
+              HorizontalAlignment="Center"  
+              Text="{TemplateBinding Content}" 
+              />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 
+        This template ensures that content of a HeaderedContentControl 
+        fills the available vertical space. 
+        -->
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <DockPanel>
+                        <ContentPresenter 
+              DockPanel.Dock="Top"
+              ContentSource="Header" 
+              ContentTemplate="{TemplateBinding HeaderTemplate}" 
+              />
+                        <ContentPresenter 
+              ContentSource="Content" 
+              ContentTemplate="{TemplateBinding ContentTemplate}" 
+              />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="StackPanelLewo" TargetType="{x:Type StackPanel}">
+        <Setter Property="Width" Value="234"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+    <!-- Proba nawigacji po lewej -->
+    <Style x:Key="Proba2" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontFamily" Value="Lato"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="Background" Value="#FF293746"/>
+        <Setter Property="BorderBrush" Value="#FF293746"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="60,0,0,20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="#FF293746" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF36495D"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--
+  This style ensures that the borders in the main window are consistent.
+  -->
+    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="WhiteSmoke" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+    <!--
+  This template explains how to render the list of commands on the left
+  side in the main window (the 'Control Panel' area).
+  -->
+    <DataTemplate x:Key="CommandsTemplate">
+        <ItemsControl IsTabStop="False" ItemsSource="{Binding}" Margin="6,2">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="2,6">
+            <Hyperlink Command="{Binding Path=Command}">
+              <TextBlock Text="{Binding Path=DisplayName}" />
+            </Hyperlink>
+          </TextBlock>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DataTemplate>
+    <!-- 
+  This template explains how to render 
+  a tab item with a close button.
+  -->
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="120">
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"
+        FontWeight="Bold"  
+        Margin="0,1,0,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16" 
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}" 
+        VerticalAlignment="Center" 
+        />
+        </DockPanel>
+    </DataTemplate>
+    <!--
+  This template explains how to render the 'Workspace' content area in the main window.
+  -->
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+      BorderBrush="#FFD7DEE6"
+      BorderThickness="1"
+      Background="#FFD7DEE6"
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}" 
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+      />
+    </DataTemplate>
+</ResourceDictionary>

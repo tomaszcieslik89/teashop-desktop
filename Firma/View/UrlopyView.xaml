@@ -1,0 +1,64 @@
+﻿<local:WszystkieViewBase x:Class="Firma.View.UrlopyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Firma.View"
+             xmlns:adorners="http://gu.se/Adorners"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranyUrlop, Mode=TwoWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding IdUrlopu}"/>
+                        <DataGridTextColumn Header="Wykorzystane dni urlopu" Binding="{Binding WykorzystanoU}"/>
+                        <DataGridTextColumn Header="Dodatkowe dni urlopu" Binding="{Binding DodatkoweDniUrlopu}"/>
+                        <DataGridTextColumn Header="Data rozpoczęcia urlopu" Binding="{Binding DataRozpUrlopuU}"/>
+                        <DataGridTextColumn Header="Data zakończenia urlopu" Binding="{Binding DataZakonczeniaUrlopu}"/>
+                        <DataGridTextColumn Header="Rodzaj urlopu" Binding="{Binding RodzajUrlopuU}"/>
+                        <DataGridTextColumn Header="Rodzaj umowy" Binding="{Binding RodzajUmowyU}"/>
+                        <DataGridTextColumn Header="Wymiar etatu" Binding="{Binding WymiarEtatuU}"/>
+                        <DataGridTextColumn Header="Limit urlopu" Binding="{Binding LimitUrlopuU}"/>
+                        <DataGridTextColumn Header="Nazwa pracownika" Binding="{Binding NazwaPracownikU}"/>
+                        <DataGridTextColumn Header="Stanowisko pracownika" Binding="{Binding StanowiskoU}"/>
+                        <DataGridTextColumn Header="Imię" Binding="{Binding ImieU}"/>
+                        <DataGridTextColumn Header="Drugie imię " Binding="{Binding DrugieImieU}"/>
+                        <DataGridTextColumn Header="Nazwisko" Binding="{Binding NazwiskoU}"/>
+                        <DataGridTextColumn Header="Nazwisko rodowe matki" Binding="{Binding NazwiskoRodMatU}"/>
+                        <DataGridTextColumn Header="Imię ojca" Binding="{Binding ImieOjcaU}"/>
+                        <DataGridTextColumn Header="Imię matki" Binding="{Binding ImieMatkiU}"/>
+                        <DataGridTextColumn Header="Miejscowość" Binding="{Binding MiejscowoscU}"/>
+                        <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzeniaU}"/>
+                        <DataGridTextColumn Header="Kraj" Binding="{Binding KrajU}"/>
+                        <DataGridTextColumn Header="Powiat" Binding="{Binding PowiatU}"/>
+                        <DataGridTextColumn Header="Gmina" Binding="{Binding GminaU}"/>
+                        <DataGridTextColumn Header="Numer paszportu" Binding="{Binding NrPaszportuU}"/>
+                        <DataGridTextColumn Header="Ulica" Binding="{Binding UlicaU}"/>
+                        <DataGridTextColumn Header="Numer domu" Binding="{Binding NrDomuU}"/>
+                        <DataGridTextColumn Header="Numer lokalu" Binding="{Binding NrLokaluU}"/>
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding TelefonU}"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding EmailU}"/>
+                        <DataGridTextColumn Header="Województwo" Binding="{Binding WojewodzctwoU}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </UserControl>
+</local:WszystkieViewBase>
+

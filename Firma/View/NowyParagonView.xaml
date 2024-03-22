@@ -1,0 +1,141 @@
+﻿<local:JedenViewBase x:Class="Firma.View.NowyParagonView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:adorners="http://gu.se/Adorners"
+             xmlns:local="clr-namespace:Firma.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Dane osobowe" Grid.Row="0" Style="{StaticResource WzorGroupBox}">
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Faktura nr. PA" Style="{StaticResource WzorLabel}" Margin="0,3,0,8"/>
+                    <TextBox Grid.Row="0" Grid.Column="2" adorners:Watermark.Text="1/01/23" Style="{StaticResource WzorTextBox}" Text="{Binding Path=NumerDokumentu, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Kontrahent" Style="{StaticResource WzorLabel}"/>
+                    <Button Content="Wybierz kontrahenta" Grid.Row="1" Grid.Column="2" Command="{Binding WybierzKontrahenta}" />
+                    <Label Grid.Row="2" Grid.Column="1" Content="Nazwa firmy" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="NIP" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="3" Grid.Column="2" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentNip, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Grid.Column="3" Content="Imię" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="2" Grid.Column="4" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentImie, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="3" Grid.Column="3" Content="REGON" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="3" Grid.Column="4" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentREGON, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Grid.Column="5" Content="Nazwisko" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="2" Grid.Column="6" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="3" Grid.Column="5" Content="Telefon" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="3" Grid.Column="6" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentTelefon, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="2" Grid.Column="7" Content="Rabat (%)" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="2" Grid.Column="8" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentRabat, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="3" Grid.Column="7" Content="E-mail" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="3" Grid.Column="8" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=KontrahentEmail, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Towar" Grid.Row="1" Style="{StaticResource WzorGroupBox}">
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="480"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <!--towar-->
+                    <Label Grid.Row="0" Grid.Column="1" Content="Wybrane towary: " Style="{StaticResource WzorLabel}"/>
+                    <Button Content="Wybierz towar" Grid.Row="0" Grid.Column="2" Width="200" HorizontalAlignment="Left" Command="{Binding WybierzTowar}"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Towar" Style="{StaticResource WzorLabel}"/>
+                    <TextBox Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" IsEnabled="False" Text="{Binding Path=NazwaTowaru, UpdateSourceTrigger=PropertyChanged}" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Daty oraz wartości" Grid.Row="2" Style="{StaticResource WzorGroupBox}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="590"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Data wystawienia:" Style="{StaticResource WzorLabel}"/>
+                    <DatePicker x:Name="DataWystawienia" Grid.Row="0" Grid.Column="2" Style="{StaticResource WzorDatePicker}" SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}" SelectedDateFormat="Short"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Termin płatności:" Style="{StaticResource WzorLabel}" />
+                    <DatePicker x:Name="DataPlatnosci" Grid.Row="1" Grid.Column="2" Style="{StaticResource WzorDatePicker}" SelectedDate="{Binding Path=TerminPlatnosci, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="0" Grid.Column="3" Content="Dodatkowy rabat( % ):" Style="{StaticResource WzorLabel}"/>
+                    <ComboBox                         
+                                        Grid.Column="6" 
+                                        Grid.Row="0" 
+                                        Style="{StaticResource WzorComboBox}"
+                                        ItemsSource="{Binding RabatComboboxItems}"
+                                        DisplayMemberPath="Procent"
+                                        SelectedValuePath="IdRabatu"
+                                        SelectedValue="{Binding Path=IdRabatu, Mode=TwoWay}"
+                                        />
+                    <Label Grid.Row="1" Grid.Column="3" Content="Płatność:" Style="{StaticResource WzorLabel}"/>
+                    <ComboBox                         
+                                        Grid.Column="6" 
+                                        Grid.Row="1" 
+                                        Style="{StaticResource WzorComboBox}"
+                                        ItemsSource="{Binding SposobyPlatnosciComboboxItems}"
+                                        DisplayMemberPath="NazwaSposobuPlatnosci"
+                                        SelectedValuePath="IdSposobuPlatnosci"
+                                        SelectedValue="{Binding Path=IdSposobuPlatnosci, Mode=TwoWay}"
+                                        />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Dodatkowe" Grid.Row="3" Style="{StaticResource WzorGroupBox}">
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="990"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Grid.Column="0"  Content="Opis:" Style="{StaticResource WzorLabelPogrubiony}"/>
+                    <TextBox Grid.Row="1" Grid.Column="2" adorners:Watermark.Text="Dodatkowy opis" Style="{StaticResource WzorTextBox}"  Text="{Binding Path=DokumentDodatkoweUwagi, UpdateSourceTrigger=PropertyChanged}" Height="100"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </UserControl>
+</local:JedenViewBase>

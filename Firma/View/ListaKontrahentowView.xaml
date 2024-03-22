@@ -1,0 +1,62 @@
+﻿<local:WszystkieViewBase x:Class="Firma.View.ListaKontrahentowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Firma.View"
+        mc:Ignorable="d"
+        d:DesignHeight="450" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranyKontrahent2, Mode=TwoWay}">
+                        <DataGrid.Columns>
+                         <DataGridTextColumn Header="ID" Binding="{Binding IdDanePersonalne}"/>
+                        <DataGridTextColumn Header="Kod" Binding="{Binding KodDane}"/>
+                        <DataGridTextColumn Header="Imie" Binding="{Binding ImieDane}"/>
+                        <DataGridTextColumn Header="Nazwisko" Binding="{Binding NazwiskoDane}"/>
+                        <DataGridTextColumn Header="Nazwa firmy" Binding="{Binding NazwaDane}"/>
+                        <DataGridTextColumn Header="Opis" Binding="{Binding UwagiDane}"/>
+                        <DataGridTextColumn Header="E-mail" Binding="{Binding EmailDane}"/>
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding TelefonDane}"/>
+                        <DataGridTextColumn Header="REGON" Binding="{Binding REGONDane}"/>
+                        <DataGridTextColumn Header="NIP" Binding="{Binding NIPDane}"/>
+                        <DataGridTextColumn Header="Miejscowość" Binding="{Binding MiejscowoscDane}"/>
+                        <DataGridTextColumn Header="Kod pocztowy" Binding="{Binding KodPocztowyDane}"/>
+                        <DataGridTextColumn Header="Województwo" Binding="{Binding Wojewodztwo}"/><!--ss-->
+                        <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/><!--ss-->
+                        <DataGridTextColumn Header="Ulica" Binding="{Binding UlicaDane}"/>
+                        <DataGridTextColumn Header="Nr domu" Binding="{Binding NrDomuDane}"/>
+                        <DataGridTextColumn Header="Nr lokalu" Binding="{Binding NrLokaluDane}"/>
+                        <DataGridTextColumn Header="Przypisany rabat ( % )" Binding="{Binding RabatDane}"/><!--ss-->
+                        <DataGridTextColumn Header="Forma płatności" Binding="{Binding FormaPlatnosciDane}"/><!--ss-->                       
+                        <DataGridTextColumn Header="Nazwa banku" Binding="{Binding BankDane}"/>
+                        <DataGridTextColumn Header="Nr kontra bankowego" Binding="{Binding RachunekNrDane}"/>
+                        <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>            
+        </Grid>
+    </UserControl>
+</local:WszystkieViewBase>

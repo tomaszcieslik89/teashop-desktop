@@ -1,0 +1,47 @@
+﻿<local:WszystkieViewBase x:Class="Firma.View.ListaDokumentowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Firma.View"
+             xmlns:adorners="http://gu.se/Adorners"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranyDokument, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IdDokumentuSprzedazy}"/>
+                    <DataGridTextColumn Header="Typ dokumentu" Binding="{Binding DokumentRodzajDokumentu}"/><!--test-->
+                    <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding DokumentNumerDokumentu}" />
+                    <DataGridTextColumn Header="Rabat ( % )" Binding="{Binding DokumentDodatkoweRabat}" />
+                    <DataGridTextColumn Header="Sposób płatności" Binding="{Binding DokumentSposobuPlatnosciNazwa}"/>
+                    <DataGridTextColumn Header="Data wystawienia" Binding="{Binding DokumentDataWystawienia}"/>
+                    <DataGridTextColumn Header="Termin platnosci" Binding="{Binding DokumentTerminPlatnosci}"/>
+                    <DataGridTextColumn Header="Nip" Binding="{Binding NIP}"/>
+                    <DataGridTextColumn Header="Uwagi/Opis" Binding="{Binding DokumentDodatkoweUwagi}"/>
+                    <DataGridTextColumn Header="Nazwa firmy" Binding="{Binding DokumentDodatkoweNazwa}"/>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding DokumentDodatkoweImie}"/>
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding DokumentDodatkoweNazwisko}"/>
+                    <DataGridTextColumn Header="E-mail" Binding="{Binding DokumentDodatkoweEmail}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </UserControl>
+</local:WszystkieViewBase>

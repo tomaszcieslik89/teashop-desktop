@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Firma.View.KoniecPracyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Firma.View"
+             mc:Ignorable="d"
+             Height="300" Width="2000">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="530"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource WzorTextBlockSrodek}" HorizontalAlignment="Center" VerticalAlignment="Center"> 
+                    Czy na pewno chcesz zakończyć pracę? <LineBreak/>
+                </TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="1" x:Name="TakButton" Content="TAK" Style="{StaticResource WzorButtonStandard}" Click="TakButton_Click"/>
+                <Button Grid.Row="0" Grid.Column="3" x:Name="NieButton" Content="NIE" Style="{StaticResource WzorButtonStandard}" Click="NieButton_Click"/>
+            </Grid>
+        </Grid>
+    </UserControl>
+</UserControl>

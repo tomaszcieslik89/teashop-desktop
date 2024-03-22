@@ -1,0 +1,160 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Firma.View">
+    <!--odpowiednik USINGCONTROL-->
+    <Style TargetType="{x:Type local:WszystkieViewBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:WszystkieViewBase}">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
+                            <ToggleButton Width="30" Height="30" Command="{Binding MinusCommand}">
+                                <Image Source="/Content/minusB.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </ToggleButton>
+                            <ToggleButton Width="30" Height="30" Command="{Binding LoadCommand}">
+                                <Image Source="/Content/refresh.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </ToggleButton>
+                            <ToggleButton Width="30" Height="30" Command="{Binding AddCommand}">
+                                <!--add-->
+                                <Image Source="/Content/plusB.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </ToggleButton>
+                        </ToolBar>
+                        <Expander Grid.Row="1" Header="Sortowanie i filtrowanie" Background="#FFD7DEE6" Margin="0,6,0,6" IsExpanded="True">
+                            <!--IsExpanded - rozwiniete-->
+                            <Grid Margin="0,6,0,6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32"/>
+                                    <RowDefinition Height="32"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Content="Filtruj względem " Margin="2"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" Margin="2"
+                                          ItemsSource="{Binding FindComboboxItems}"
+                                          SelectedValue="{Binding Path=FindField, Mode=TwoWay}"/>
+                                <Label Grid.Row="0" Grid.Column="2" Content="Szukaj" Margin="2"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" Margin="2"
+                                         Text="{Binding FindTextBox}"/>
+                                <Button Grid.Row="0" Grid.Column="4" Content="Wykonaj"
+                                        Command="{Binding FindCommand}"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Sortuj względem " Margin="2"/>
+                                <ComboBox Grid.Row="1" Grid.Column="1" Margin="2"
+                                          ItemsSource="{Binding SortComboboxItems}"
+                                          SelectedValue="{Binding Path=SortField, Mode=TwoWay}"/>
+                                <Button Grid.Row="1" Grid.Column="2" Content="Sortuj"
+                                        Command="{Binding SortCommand}"/>
+                            </Grid>
+                        </Expander>
+                        <ContentPresenter Grid.Row="2" Margin="0,5,0,5"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:JedenViewBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:JedenViewBase}">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
+                            <ToggleButton Content="Zapisz i zamknij" Height="30" Width="100" Command="{Binding SaveCommand}"/>
+                            <!--<ToggleButton Content="Anuluj" Height="30" Width="100"/>-->
+                        </ToolBar>
+                        <ContentPresenter Grid.Row="1" Margin="0,5,0,5"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type local:WszystkieViewBaseZDedykowanymFiltrowaniem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:WszystkieViewBaseZDedykowanymFiltrowaniem}">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
+                            <ToggleButton Width="30" Height="30" Command="{Binding MinusCommand}">
+                                <Image Source="/Content/minusB.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </ToggleButton>
+                            <ToggleButton Width="30" Height="30" Command="{Binding LoadCommand}">
+                                <Image Source="/Content/refresh.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </ToggleButton>
+                            <ToggleButton Width="30" Height="30" Command="{Binding AddCommand}">
+                                <!--add-->
+                                <Image Source="/Content/plusB.png" 
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </ToggleButton>
+                        </ToolBar>
+                        <Expander Grid.Row="1" Header="Sortowanie i filtrowanie" Background="#FFD7DEE6" Margin="0,6,0,6" IsExpanded="True">
+                            <!--IsExpanded - rozwiniete-->
+                            <Grid Margin="0,6,0,6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32"/>
+                                    <RowDefinition Height="32"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <!--SEPARATOR-->
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Content="Filtruj względem " Margin="2"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" Margin="2"
+                                          ItemsSource="{Binding FindComboboxItems}"
+                                          SelectedValue="{Binding Path=FindField, Mode=TwoWay}"/>
+                                <Label Grid.Row="0" Grid.Column="2" Content="Szukaj" Margin="2"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" Margin="2" Text="{Binding FindTextBox}"/>
+                                <Button Grid.Row="0" Grid.Column="4" Content="Wykonaj" Command="{Binding FindCommand}"/>
+                                <!--SEPARATOR-->
+                                <Label Grid.Row="0" Grid.Column="6" Content="Cena od: " Margin="2"/>
+                                <TextBox Grid.Row="0" Grid.Column="7" Margin="2" Text="{Binding CenaOd}"/>
+                                <Label Grid.Row="2" Grid.Column="6" Content="Cena do: " Margin="2"/>
+                                <TextBox Grid.Row="2" Grid.Column="7" Margin="2" Text="{Binding CenaDo}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Content="Sortuj względem " Margin="2"/>
+                                <!--SEPARATOR-->
+                                <ComboBox Grid.Row="1" Grid.Column="1" Margin="2"
+                                          ItemsSource="{Binding SortComboboxItems}"
+                                          SelectedValue="{Binding Path=SortField, Mode=TwoWay}"/>
+                                <Button Grid.Row="1" Grid.Column="2" Content="Sortuj"
+                                        Command="{Binding SortCommand}"/>
+                            </Grid>
+                        </Expander>
+                        <ContentPresenter Grid.Row="2" Margin="0,5,0,5"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

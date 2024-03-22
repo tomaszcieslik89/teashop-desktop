@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="Firma.View.RaportSprzedazyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Firma.View"
+        mc:Ignorable="d"
+        d:DesignHeight="800" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ManiWindowResources.xaml" />
+    </UserControl.Resources>
+    <UserControl Style="{StaticResource WzorUserControl}">
+        <Grid Style="{StaticResource WzorGrid}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="Okres rozliczeniowy" Grid.Row="0" Style="{StaticResource WzorGroupBox}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Data od " Style="{StaticResource WzorLabel}"/>
+                        <DatePicker x:Name="DataOd" SelectedDate="{Binding DataOd}" Grid.Row="0" Grid.Column="1" Style="{StaticResource WzorDatePicker}"/>
+                        <Label Grid.Row="0" Grid.Column="2" Content="Data do " Style="{StaticResource WzorLabel}"/>
+                        <DatePicker x:Name="DataDo" SelectedDate="{Binding DataDo}" Grid.Row="0" Grid.Column="3" Style="{StaticResource WzorDatePicker}"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Przychód" Grid.Row="1" Style="{StaticResource WzorGroupBox}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="110"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Wybierz towar " Style="{StaticResource WzorLabel}"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource WzorComboBox}"                            
+                          ItemsSource="{Binding TowaryComboBoxItems}"
+                          DisplayMemberPath="Value"
+                          SelectedValuePath="Key"
+                          SelectedValue="{Binding Path=IdTowaru, Mode=TwoWay}"
+                            />
+                        <Button Grid.Row="0" Grid.Column="3" Content="Oblicz" Command="{Binding ObliczCommand}" Style="{StaticResource WzorButtonStandard}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Przychód: " Style="{StaticResource WzorLabel}"/>
+                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Utarg}"/>
+
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="z faktur: " Style="{StaticResource WzorLabel}"/>
+                        <Label Grid.Row="3" Grid.Column="1" Content="{Binding UtargFaktura, Mode=TwoWay}"/>
+                        <Label Grid.Row="4" Grid.Column="0" Content="z paragonów: " Style="{StaticResource WzorLabel}"/>
+                        <Label Grid.Row="4" Grid.Column="1" Content="{Binding UtargParagon, Mode=TwoWay}"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Magazyn" Grid.Row="2" Style="{StaticResource WzorGroupBox}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Wybierz towar " Style="{StaticResource WzorLabel}"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource WzorComboBox}"                            
+                          ItemsSource="{Binding TowaryComboBoxItems}"
+                          DisplayMemberPath="Value"
+                          SelectedValuePath="Key"
+                          SelectedValue="{Binding Path=IdTowaruMagazynu, Mode=TwoWay}"
+                            />
+                        <Button Grid.Row="0" Grid.Column="3" Content="Oblicz" Command="{Binding ObliczStanMagazynowyCommand}" Style="{StaticResource WzorButtonStandard}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Stan magazynowy: " Style="{StaticResource WzorLabel}"/>
+                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding StanMagazynowy}"/>
+                        <Border Background="#FFD7DEE6" Height="25" Grid.Row="2"/>
+                        <Label Grid.Row="4" Grid.Column="0" Content="Towar z danego kraju" Style="{StaticResource WzorLabel}"/>
+
+                        <ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource WzorComboBox}"                            
+                          ItemsSource="{Binding ProducentComboBoxItems}"
+                          DisplayMemberPath="Value"
+                          SelectedValuePath="Key"
+                          SelectedValue="{Binding Path=IdProducentRaport, Mode=TwoWay}"
+                            />
+                        <Button Grid.Row="4" Grid.Column="3" Content="Oblicz" Command="{Binding ObliczStanMagazynowyProducentCommand}" Style="{StaticResource WzorButtonStandard}"/>
+                        <Label Grid.Row="5" Grid.Column="0" Content="Stan magazynowy: " Style="{StaticResource WzorLabel}"/>
+                        <Label Grid.Row="5" Grid.Column="1" Content="{Binding StanMagazynowyProducenta}"/>
+                        <!--znak mniejszosci &lt;-->
+                        <Label Grid.Row="6" Grid.Column="0" Content="Ilość towaru &lt; 20 : " Style="{StaticResource WzorLabel}"/>
+                        <!--<Label Grid.Row="6" Grid.Column="1" Content="{Binding MalaIloscTowaru}"/>-->
+                        <Button Grid.Row="6" Grid.Column="3" Content="Wyświetl" Command="{Binding WyswietlMalaIloscTowaruCommand}" Style="{StaticResource WzorButtonStandard}"/>
+
+
+                        <ListView ItemsSource="{Binding MalaIloscTowaru}" Grid.Row="6" Grid.Column="5">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Marka" DisplayMemberBinding="{Binding Marka}" Width="auto"/>
+                                    <GridViewColumn  Header="Towar" DisplayMemberBinding="{Binding Towar}" Width="auto"/>
+                                    <GridViewColumn  Header="Ilość" DisplayMemberBinding="{Binding Ilosc}" Width="50"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </UserControl>
+</UserControl>
+
